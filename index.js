@@ -20,10 +20,8 @@ function getHTML(link) {
       var parser = new DOMParser();
       var doc = parser.parseFromString(response, 'text/html');
       console.log(doc);
-      re = doc.getElementsByTagName("a");
+      re = doc.getElementsByTagName('a').getElementsByClassName('link-primary');
       console.log(re);
-      re2 = doc.querySelectorAll('a.link-primary');
-      console.log(re2);
       //let element = doc.getElementsByClassName("link-primary")[0];
       //let href1 = element.getAttribute("href");
   }).catch(err => console.log(err))
