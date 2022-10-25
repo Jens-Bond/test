@@ -43,7 +43,7 @@ function getCODE(link) {
       var doc = parser.parseFromString(html, 'text/html');
       let href = doc.getElementById("ratsit-lonekollen-url").href;
       //console.log(href);
-      let code = code.replace("https://www.merinfo.se/redirect/lonekollen/", "");
+      let code = href.replace("https://www.merinfo.se/redirect/lonekollen/", "");
       console.log(code)
       info.push({
           "code": code
