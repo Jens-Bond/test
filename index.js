@@ -173,7 +173,7 @@ function getHTML(link) {
   response = fetch(finalLink).then(response => response.text()).then((response) => {
     var doc = new DOMParser().parseFromString(response, "text/html");
     let element = doc.getElementsByClassName("link-primary")[0];
-    let href = elem.getAttribute("href");
+    let href = element.getAttribute("href");
     console.log("infunc", href)
     info.push({
       "personLink": stringify(href)
