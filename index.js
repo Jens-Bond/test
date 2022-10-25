@@ -42,7 +42,12 @@ function getCODE(link) {
       var parser = new DOMParser();
       var doc = parser.parseFromString(html, 'text/html');
       let href = doc.getElementById("ratsit-lonekollen-url").href;
-      console.log(href);
+      //console.log(href);
+      let code = code.replace("https://www.merinfo.se/redirect/lonekollen/", "");
+      console.log(code)
+      info.push({
+          "code": code
+      });
   }).catch(err => console.log(err))
 };
 
@@ -50,4 +55,4 @@ function getCODE(link) {
 
 
 getHTML("https://www.merinfo.se/search?who=0702990271");
-
+console.log(info)
