@@ -28,19 +28,20 @@ function getHTML(link) {
           "searchedLink": href
       });
       console.log("stored:", info);
+      getCODE(href)
   }).catch(err => console.log(err))
 };
-/*
+
 function getCODE(link) {
   let PROXY = "https://ghg7femhx6.execute-api.us-east-1.amazonaws.com/";
   //let finalLink = proxy + link;
   let finalLink = PROXY + link;
   response = fetch(finalLink).then(response => response.text()).then((html) => {
-      d
+      console.log("HTML:::", html);
   }).catch(err => console.log(err))
 };
 
-*/
+
 
 
 getHTML("https://www.merinfo.se/search?who=0702990271");
