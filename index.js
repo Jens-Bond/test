@@ -21,7 +21,7 @@ function getHTML(link) {
   response = fetch(finalLink).then(response => response.text()).then((html) => {
       var parser = new DOMParser();
       var doc = parser.parseFromString(html, 'text/html');
-      //console.log(doc);
+      console.log(doc);
       let href = doc.getElementsByClassName("link-primary")[0].href;
       console.log("person href:", href);
       info.push({
