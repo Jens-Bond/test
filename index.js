@@ -41,7 +41,7 @@ function getCODE(link) {
       //ratsit-lonekollen-url
       var parser = new DOMParser();
       var doc = parser.parseFromString(html, 'text/html');
-      let href = doc.getElementsById("ratsit-lonekollen-url")[0].href;
+      let href = doc.getElementById("ratsit-lonekollen-url").href;
       console.log(href);
   }).catch(err => console.log(err))
 };
