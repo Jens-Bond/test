@@ -11,6 +11,8 @@ dict.push({
     value: "the value"
 });
 */
+// XPath:
+// '/html/body/div/main/div/div[3]/div[2]/div[3]/div[1]/div/div/div[1]/h2/a'
 
 function getHTML(link) {
   let PROXY = "https://ghg7femhx6.execute-api.us-east-1.amazonaws.com/";
@@ -19,11 +21,9 @@ function getHTML(link) {
   response = fetch(finalLink).then(response => response.text()).then((html) => {
       var parser = new DOMParser();
       var doc = parser.parseFromString(html, 'text/html');
-      const firstP = document.evaluate(
-          '/html/body/div/main/div/div[3]/div[2]/div[3]/div[1]/div/div/div[1]/h2/a', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null,
-      ).singleNodeValue;
-      console.log(firstP); // 👉️ p'
-      console.log(firstP.textContent);
+      console.log(doc);
+      let t = doc.getElementByClassName("link-primary").innerHTML;
+      console.log(t);
       //let element = doc.getElementsByClassName("link-primary")[0];
       //let href1 = element.getAttribute("href");
   }).catch(err => console.log(err))
