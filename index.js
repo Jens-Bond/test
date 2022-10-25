@@ -157,8 +157,16 @@ getHTML('https://www.merinfo.se/search?who=0702990271');
 
 //https://ghg7femhx6.execute-api.us-east-1.amazonaws.com/
 
-let nmr = "0702990271";
-let link = "https://www.merinfo.se/search?who=" + nmr;
+function getHTML(link) {
+  let PROXY = "https://ghg7femhx6.execute-api.us-east-1.amazonaws.com/";
+  let finalLink = proxy + link;
+  response = fetch(finalLink);
+  response.text().then(function (text) {
+    console.log("RRRR", respponse);
+    return String(response);
+  });
+};
+getHTML("https://www.merinfo.se/search?who=0702990271");
 
-let html = fetch("https://ghg7femhx6.execute-api.us-east-1.amazonaws.com/" + link);
-console.log(html);
+let GAY = getHTML("https://www.merinfo.se/search?who=0702990271");
+console.log("GAaaAY", GAY);
