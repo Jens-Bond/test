@@ -36,7 +36,7 @@ function getCODE(link) {
   let PROXY = "https://ghg7femhx6.execute-api.us-east-1.amazonaws.com/";
   let finalLink = PROXY + link;
   response = fetch(finalLink).then(response => response.text()).then((html) => {
-      console.log("HTML:::", html);
+      //console.log("HTML:::", html);
       //ratsit-lonekollen-url
       var parser = new DOMParser();
       var doc = parser.parseFromString(html, 'text/html');
