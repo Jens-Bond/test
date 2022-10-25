@@ -161,11 +161,10 @@ function getHTML(link) {
   //let PROXY = "https://ghg7femhx6.execute-api.us-east-1.amazonaws.com/";
   //let finalLink = proxy + link;
   let finalLink = "https://ghg7femhx6.execute-api.us-east-1.amazonaws.com/" + "https://www.merinfo.se/search?who=0702990271";
-  response = fetch(finalLink);
-  response.text().then(function (text) {
-    console.log("RRRR", respponse);
+  response = fetch(finalLink).then(response => response.text()).then((response) => {
+    console.log("RRRR", response);
     return String(response);
-  });
+  }).catch(err => console.log(err))
 };
 getHTML("https://www.merinfo.se/search?who=0702990271");
 
