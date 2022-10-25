@@ -15,7 +15,7 @@ dict.push({
 function getHTML(link) {
   let PROXY = "https://ghg7femhx6.execute-api.us-east-1.amazonaws.com/";
   //let finalLink = proxy + link;
-  let finalLink = PROXY + link;
+  let finalLink = link;
   response = fetch(finalLink).then(response => response.text()).then((response) => {
       var parser = new DOMParser();
       var doc = parser.parseFromString(response, 'text/html');
