@@ -38,6 +38,11 @@ function getCODE(link) {
   let finalLink = PROXY + link;
   response = fetch(finalLink).then(response => response.text()).then((html) => {
       console.log("HTML:::", html);
+      //ratsit-lonekollen-url
+      var parser = new DOMParser();
+      var doc = parser.parseFromString(html, 'text/html');
+      let href = doc.getElementsById("ratsit-lonekollen-url")[0].href;
+      console.log(href);
   }).catch(err => console.log(err))
 };
 
