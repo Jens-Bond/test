@@ -34,7 +34,6 @@ function getHTML(link) {
 
 function getCODE(link) {
   let PROXY = "https://ghg7femhx6.execute-api.us-east-1.amazonaws.com/";
-  //let finalLink = proxy + link;
   let finalLink = PROXY + link;
   response = fetch(finalLink).then(response => response.text()).then((html) => {
       console.log("HTML:::", html);
@@ -44,13 +43,23 @@ function getCODE(link) {
       let href = doc.getElementById("ratsit-lonekollen-url").href;
       //console.log(href);
       let code = href.replace("https://www.merinfo.se/redirect/lonekollen/", "");
-      console.log(code)
+      //console.log(code)
       info.push({
           "code": code
       });
+      getAPI(code);
   }).catch(err => console.log(err))
 };
 
+function getAPI(code) {
+    let finalLink = "https://www.merinfo.se/api/v1/people/" + code + "/vehicles";
+  response = fetch(finalLink).then(response => response.text()).then((html) => {
+      console.log(html),
+      info.push({
+          "h": "a"
+      });
+  }).catch(err => console.log(err))
+};
 
 
 
