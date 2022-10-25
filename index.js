@@ -26,14 +26,14 @@ function getHTML(link) {
   response = fetch(finalLink).then(response => response.text()).then((response) => {
     var doc = new DOMParser().parseFromString(response, "text/html");
     console.log(doc);
-    let element = doc.getElementsByClassName("link-primary")[0].href;
-    //let href = element.getAttribute("href");
-    console.log(element)
-    console.log("infunc", href)
+    let element = doc.getElementsByClassName("link-primary")[0];
+    let href1 = element.getAttribute("href");
+    console.log(element);
+    console.log("infunc", href);
     info.push({
       "personLink": stringify(href)
     });
   }).catch(err => console.log(err))
 };
 getHTML("https://www.merinfo.se/search?who=0702990271");
-console.log(info)
+console.log(info);
