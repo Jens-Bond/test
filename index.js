@@ -21,6 +21,7 @@ function getHTML(link) {
       var doc = parser.parseFromString(response, 'text/html');
       console.log(doc);
       console.log(doc.getElementsByClassName("link-primary"));
+      console.log(doc.getElementsByClassName("link-primary").attr("href"));
       //let element = doc.getElementsByClassName("link-primary")[0];
       //let href1 = element.getAttribute("href");
   }).catch(err => console.log(err))
