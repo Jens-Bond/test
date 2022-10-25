@@ -1,13 +1,6 @@
 
 
-
-
-
 // "https://www.merinfo.se/search?who=0702990271"
-
-
-
-
 
 //https://ghg7femhx6.execute-api.us-east-1.amazonaws.com/
 
@@ -27,7 +20,7 @@ function getHTML(link) {
       var parser = new DOMParser();
       var doc = parser.parseFromString(response, 'text/html');
       console.log(doc);
-      console.log(doc.getElementsByClassName("link-primary")[0]);
+      console.log(doc.getElementsByClassName("link-primary"));
       //let element = doc.getElementsByClassName("link-primary")[0];
       //let href1 = element.getAttribute("href");
   }).catch(err => console.log(err))
