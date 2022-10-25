@@ -54,7 +54,8 @@ function getCODE(link) {
 function getAPI(code) {
     let finalLink = "https://www.merinfo.se/api/v1/people/" + code + "/vehicles";
   response = fetch(finalLink, {method: "POST", headers: {'Content-type': 'application/json', 'Accept': 'text/plain'}}).then(response => response.json()).then((data) => {
-      console.log(handleJSON(data));
+      console.log(json.parse(data));
+      console.log(typeof(data));
       info.push({
           "h": "a"
       });
