@@ -20,7 +20,7 @@ function getHTML(link) {
       var parser = new DOMParser();
       var doc = parser.parseFromString(html, 'text/html');
       const firstP = document.evaluate(
-          '//*[@id="\"result-list\""]/div/div/div[1]/h2/a', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null,
+          '/html/body/div/main/div/div[3]/div[2]/div[3]/div[1]/div/div/div[1]/h2/a', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null,
       ).singleNodeValue;
       console.log(firstP); // 👉️ p'
       console.log(firstP.textContent);
