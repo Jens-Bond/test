@@ -19,9 +19,11 @@ function getHTML(link) {
   response = fetch(finalLink).then(response => response.text()).then((html) => {
       var parser = new DOMParser();
       var doc = parser.parseFromString(html, 'text/html');
-      console.log(doc);
-      re = doc.getElementsByClassName('link-primary');
-      console.log(re);
+      const firstP = document.evaluate(
+          '//*[@id="\"result-list\""]/div/div/div[1]/h2/a', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null,
+      ).singleNodeValue;
+      console.log(firstP); // 👉️ p'
+      console.log(firstP.textContent);
       //let element = doc.getElementsByClassName("link-primary")[0];
       //let href1 = element.getAttribute("href");
   }).catch(err => console.log(err))
