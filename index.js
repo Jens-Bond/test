@@ -24,8 +24,8 @@ function getHTML(link) {
   //let finalLink = proxy + link;
   let finalLink = PROXY + link;
   response = fetch(finalLink).then(response => response.text()).then((response) => {
-    var doc = new DOMParser().parseFromString(response, "text/html");
-    console.log(doc.getElementsByClassName("link-primary")[0]);
+      var doc = new DOMParser().parseFromString(response, "text/html");
+      console.log(doc.getElementsByClassName("link-primary")[0]);
     //let element = doc.getElementsByClassName("link-primary")[0];
     //let href1 = element.getAttribute("href");
   }).catch(err => console.log(err))
