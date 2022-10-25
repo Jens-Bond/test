@@ -158,8 +158,9 @@ getHTML('https://www.merinfo.se/search?who=0702990271');
 //https://ghg7femhx6.execute-api.us-east-1.amazonaws.com/
 
 function getHTML(link) {
-  let PROXY = "https://ghg7femhx6.execute-api.us-east-1.amazonaws.com/";
-  let finalLink = proxy + link;
+  //let PROXY = "https://ghg7femhx6.execute-api.us-east-1.amazonaws.com/";
+  //let finalLink = proxy + link;
+  let finalLink = "https://ghg7femhx6.execute-api.us-east-1.amazonaws.com/" + "https://www.merinfo.se/search?who=0702990271";
   response = fetch(finalLink);
   response.text().then(function (text) {
     console.log("RRRR", respponse);
