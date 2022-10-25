@@ -6,7 +6,7 @@
 // "https://www.merinfo.se/search?who=0702990271"
 
 
-*/
+
 
 
 //https://ghg7femhx6.execute-api.us-east-1.amazonaws.com/
